@@ -1,0 +1,6 @@
+servlets\Plus.class
+connect\ConnectSB.class
+api\API.class
+servlets\Minus.class
+kir\java3\calc_sb\resources\JavaEE8Resource.class
+kir\java3\calc_sb\JAXRSConfiguration.class

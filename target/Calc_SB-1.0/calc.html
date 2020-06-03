@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Calculator for SB</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+            function plus() {
+                const a = document.getElementById("a").value,
+                      b = document.getElementById("b").value,
+                      name = document.getElementById("enterName").value,
+                      xhr = new XMLHttpRequest(),
+                      url = "resources/api/Plus";
+        
+                xhr.open("GET", url + "?a=" + a + "&b=" + b + "&name=" + name);
+                xhr.onload = function () {
+                    const c = xhr.responseText;
+                    document.getElementById("c").value = c; 
+                }
+                
+                xhr.send();
+            }
+            
+            function minus() {
+                const a = document.getElementById("a").value,
+                      b = document.getElementById("b").value,
+                      name = document.getElementById("enterName").value,
+                      xhr = new XMLHttpRequest(),
+                      url = "resources/api/Minus";
+        
+                xhr.open("GET", url + "?a=" + a + "&b=" + b + "&name=" + name);
+                xhr.onload = function () {
+                    const c = xhr.responseText;
+                    document.getElementById("c").value = c; 
+                }
+                
+                xhr.send();
+            }
+        </script>
+    </head>
+    <body>
+        <h1>Calculator for SB</h1>
+        <input type = "text" id = "enterName" placeholder = "Введите ваше имя"/><br/>
+        
+        <input type = "number" id = "a" placeholder = "Введите число"/><br/>
+        <input type = "number" id = "b" placeholder = "Введите число"/><br/>
+        <input type = "submit" id = "plus"  value = "+" onclick = "plus();"/>
+        <input type = "submit" id = "minus" value = "-" onclick = "minus();"/><br/>
+        <input type = "text" id = "c"/>
+    </body>
+</html>
